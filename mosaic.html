@@ -1,0 +1,13 @@
+<div class="photoset">
+	<div class="photoset-row" ng-if="rows" ng-repeat="i in getRows(rows) track by $index"><span ng-show="false">{{$index+1}}</span>
+		<figure class="photoset-item animate-show" ng-repeat="(pIndex, p) in images | limitTo: perRow: $index*perRow" ng-show="photoSetInfo.length && photoSetInfo.length % images.length === 0">
+			<a href="">
+				<img class="photo" ng-src="http://taia.s3-website-ap-southeast-2.amazonaws.com/photos/{{p.filename}}" alt="{{p.title}}" width="{{getWidth(p.filename)}}" height="{{photoSetInfo[pIndex].newHeight}}" imageonload>
+    			<figcaption>
+                    <h5>{{p.title}}</h5>
+                    <p>{{p.desc}}</p>
+                </figcaption>
+            </a>
+		</figure>
+	</div>
+</div>

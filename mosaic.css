@@ -1,0 +1,49 @@
+.photoset {
+    overflow: hidden;
+    width: 100%;
+}
+/* Rows */
+.photoset .photoset-row {
+    margin-bottom: .5rem;
+    overflow: hidden;
+    width: 150%;
+}
+.photoset .photoset-row:last-child { margin: 0; }
+/* Images on each row, known as an "item" */
+.photoset .photoset-item {
+    display: block;
+    float: left;
+    margin: 0 .25rem;
+}
+.photoset .photoset-item:first-child { margin-left: 0; }
+.photoset .photoset-item:last-child  { margin-right: 0; }
+/* Images and captions are contained within <figure> */
+.photoset figure {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+.photoset figcaption {
+    background-color: rgba(255, 255, 255, .5);
+    box-sizing: border-box;
+    font-size: .8rem;
+    padding: .5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    -ms-transform: translateY(100%); /* IE 9 */
+    -webkit-transform: translateY(100%); /* Safari */
+    transform: translateY(100%);
+    transition: all .25s ease-in-out;
+}
+.photoset a:hover figcaption {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+.photoset img {
+    display: block;
+    max-width: 100%;
+    transition: all .125s ease-in-out;
+}
